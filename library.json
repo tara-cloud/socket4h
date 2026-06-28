@@ -1,0 +1,11 @@
+{
+  "name": "socket4h",
+  "version": "1.0.0",
+  "description": "ESP32 TCP socket client — persistent newline-delimited JSON connection to robo-world server",
+  "keywords": ["tcp", "socket", "json", "esp32", "iot"],
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "dependencies": {
+    "bblanchon/ArduinoJson": "^7.0.0"
+  }
+}
