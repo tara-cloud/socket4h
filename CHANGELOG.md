@@ -1,5 +1,14 @@
 # Changelog — socket4h
 
+## [1.0.1] — 2026-06-28
+
+### Fixed
+
+- `socket4h_loop()`: removed blocking `delay(1000)` on reconnect — now non-blocking
+- `socket4h_loop()`: skip `\r` characters to handle CRLF line endings
+
+---
+
 ## [1.0.0] — 2026-06-28
 
 ### Added

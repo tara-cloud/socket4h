@@ -36,10 +36,9 @@ void socket4h_send(const char* type, JsonDocument& doc) {
 }
 
 void socket4h_loop() {
-    // Reconnect if dropped
+    // Non-blocking reconnect
     if (!_client.connected()) {
         _client.stop();
-        delay(1000);
         if (!_client.connect(_host.c_str(), _port)) return;
         Serial.printf("[socket4h] reconnected to %s:%d\n", _host.c_str(), _port);
     }
@@ -57,7 +56,7 @@ void socket4h_loop() {
                 }
                 _rxBuf = "";
             }
-        } else {
+        } else if (c != '\r') {
             _rxBuf += c;
         }
     }
